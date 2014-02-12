@@ -2,15 +2,17 @@ Source: popt
 Section: devel
 Priority: optional
 Maintainer: Paul Martin <pm@debian.org>
-Build-Depends: debhelper (>> 7), gettext, quilt
+Build-Depends: debhelper (>> 9), gettext (>= 0.18.1.1-8), quilt
 Homepage: http://rpm5.org/
-Standards-Version: 3.8.4
+Standards-Version: 3.9.3
 
 Package: libpopt0
 Architecture: any
 Section: libs
 Priority: important
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
 Conflicts: popt, libpopt-dev (<= 1.4-1), rpm (<= 4.0.2-3)
 Replaces: popt
 Description: lib for parsing cmdline parameters
@@ -28,6 +30,7 @@ Architecture: any
 Section: libdevel
 Priority: optional
 Depends: libc6-dev | libc-dev, libpopt0 (= ${binary:Version}), ${misc:Depends}
+Multi-Arch: same
 Conflicts: popt
 Replaces: popt
 Description: lib for parsing cmdline parameters - development files

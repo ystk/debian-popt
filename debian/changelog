@@ -1,3 +1,56 @@
+popt (1.16-7) unstable; urgency=low
+
+  * Fix install directory for the pkgconfig file. (Closes: #658663)
+    Thanks to Christoph Biedl for spotting the oddity.
+    dh_install strikes again!
+
+ -- Paul Martin <pm@debian.org>  Wed, 30 May 2012 22:56:47 +0100
+
+popt (1.16-6) unstable; urgency=low
+
+  * Change dependency on gettext to a version that has a msgfmt that
+    always builds little endian .mo files. (Closes: #670023)
+
+ -- Paul Martin <pm@debian.org>  Tue, 29 May 2012 10:27:53 +0100
+
+popt (1.16-5) unstable; urgency=low
+
+  * Enabled hardened build flags. (Closes: #672835)
+
+ -- Paul Martin <pm@debian.org>  Mon, 14 May 2012 11:23:52 +0100
+
+popt (1.16-4) unstable; urgency=low
+
+  * Multiarch build cleanup take 2. (Closes: #670022)
+  * Ignoring localizations binary endianness versus multiarch problem.
+    That's something for gettext to fix. Thanks for the advice, vorlon.
+    (Ignoring: #670023)
+  * Update to debhelper 9.
+  * Update to standards version 3.9.2
+  * Updated copyright file and converted to machine readable format.
+
+ -- Paul Martin <pm@debian.org>  Wed, 02 May 2012 16:22:09 +0100
+
+popt (1.16-3) unstable; urgency=low
+
+  * Multiarch build cleanup. Thanks to Jakub Wilk. (Closes: #638447)
+
+ -- Paul Martin <pm@debian.org>  Tue, 20 Dec 2011 13:26:18 +0000
+
+popt (1.16-2) unstable; urgency=low
+
+  * Update to standards version 3.9.2
+    + Comply with new build-arch/build-indep requirements.
+    + Note that libtool .la files are deprecated under Debian policy 3.9.1,
+      but continute to include libpopt.la under the "historical" exception.
+  * Package upstream's libpopt.pc (Closes: #421575)
+  * Add multiarch support. Thanks to Steve Langasek for patch.
+    (Closes: #638447)
+  * Update debian/compat to 8.
+  * Add a debian/symbols file. (Closes: #551437)
+
+ -- Paul Martin <pm@debian.org>  Mon, 19 Dec 2011 13:21:06 +0000
+
 popt (1.16-1) unstable; urgency=low
 
   * New upstream release (Closes: #581439)
