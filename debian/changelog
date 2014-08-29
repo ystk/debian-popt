@@ -1,3 +1,14 @@
+popt (1.16-8) unstable; urgency=low
+
+  * Remove build dependency on quilt. (Closes: #709541)
+  * Fix renamed __secure_getenv() function for building with glibc 2.17
+    and later. (Closes: #728596)
+  * Use dh_autotools-dev_updateconfig and dh_autotools-dev_restoreconfig
+    to keep config.sub and config.guess up to date.
+    Build-depend on autotools-dev.
+
+ -- Paul Martin <pm@debian.org>  Sun, 03 Nov 2013 20:33:05 +0000
+
 popt (1.16-7) unstable; urgency=low
 
   * Fix install directory for the pkgconfig file. (Closes: #658663)

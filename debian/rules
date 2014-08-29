@@ -46,20 +46,24 @@ objdir_udeb = $(objdir)-udeb
 configure: configure-deb-stamp configure-udeb-stamp
 configure-deb-stamp:
 	dh_testdir
+	dh_autotools-dev_updateconfig
 	# make build dir
 	mkdir $(objdir)
 	# Add here commands to configure the package.
 	cd $(objdir) && \
 	../configure --libdir=/usr/lib/$(DEB_HOST_MULTIARCH) --prefix=/usr --mandir=/usr/share/man --enable-shared $(CROSS)
+	dh_autotools-dev_restoreconfig
 	touch $@
 
 configure-udeb-stamp:
 	dh_testdir
+	dh_autotools-dev_updateconfig
 	# make build dir
 	mkdir $(objdir_udeb)
 	# Add here commands to configure the package.
 	cd $(objdir_udeb) && \
 	../configure --prefix=/usr --mandir=/usr/share/man --enable-shared $(CROSS)
+	dh_autotools-dev_restoreconfig
 	touch $@
 
 build: build-arch build-indep
