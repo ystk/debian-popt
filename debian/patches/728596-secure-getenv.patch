@@ -38,7 +38,7 @@ Index: popt-1.16/system.h
 +#if !defined(__LCLINT__)
 +#if defined(HAVE_SECURE_GETENV)
 +#define	getenv(_s)	secure_getenv(_s)
-+#elseif defined(HAVE___SECURE_GETENV)
++#elif defined(HAVE___SECURE_GETENV)
  #define	getenv(_s)	__secure_getenv(_s)
  #endif
 +#endif
